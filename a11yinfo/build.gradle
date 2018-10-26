@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+}
+
+ext {
+    // Library info:
+    libraryVersion = '1.0.0'
+    libraryName = 'A11yInfo'
+    libraryGroupId = 'com.stkent'
+    libraryArtifactId = 'a11yinfo'
+    libraryDescription = 'A compact Android utility for querying device accessibility settings.'
+    libraryInceptionYear = '2018'
+    libraryGitHubRepoName = 'stkent/A11yInfo'
+    libraryGitHubUrl = "https://github.com/${libraryGitHubRepoName}"
+    libraryIssueTrackerUrl = "${libraryGitHubUrl}/issues"
+    libraryWebsiteUrl = libraryGitHubUrl
+    libraryLabels = ['android', 'accessibility', 'a11y', 'analytics']
+    libraryLicenseName = 'Apache License Version 2.0'
+    libraryLicenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
+    // Developer info:
+    developerId = 'stkent'
+    developerName = 'Stuart Kent'
+    developerEmail = 'skent.dev@gmail.com'
+
+    // Bintray categorization information:
+    bintrayRepo = 'android-libraries'
+}
+
+apply from: 'https://raw.githubusercontent.com/stkent/JCenter/master/bintray1.8.4.gradle'
+apply from: 'https://raw.githubusercontent.com/stkent/JCenter/master/install2.1.gradle'
