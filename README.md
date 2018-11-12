@@ -2,6 +2,8 @@
 
 A compact Android utility for querying device accessibility settings.
 
+<a href="http://www.detroitlabs.com/"><img src="https://img.shields.io/badge/Sponsor-Detroit%20Labs-000000.svg" /></a>
+
 Cool things to do with this library:  
 * Collect anonymized analytics to better understand the needs of your users and convince stakeholders of the importance of properly accommodating them.  
 * Improve the in-app experience for users of certain accessibility features.
